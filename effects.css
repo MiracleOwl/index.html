@@ -1,0 +1,42 @@
+/* ======== EFFECTS.CSS (поправена верзија) ======== */
+
+/* Fade-in ефект за текст и слики */
+h1, p, img {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.6s ease;
+}
+
+/* Кога стануваат видливи */
+.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Активен линк во навигација */
+nav a.active {
+    color: red !important;
+    font-weight: bold;
+}
+
+/* Темен режим */
+:root[data-theme='dark'] body {
+    background-color: #111 !important;
+    color: #eee !important;
+}
+:root[data-theme='dark'] nav {
+    background-color: #111 !important;
+}
+:root[data-theme='dark'] p {
+    background-color: #333 !important;
+    color: #fff !important;
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
