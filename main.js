@@ -1,12 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-    // === Активен линк во навигација ===
     const current = location.pathname.split("/").pop();
     document.querySelectorAll("nav a").forEach(a => {
         if (a.getAttribute("href") === current) a.classList.add("active");
     });
 
-    // === Fade-in ефект за елементи при скрол ===
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -18,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll("h1, p, img").forEach(el => observer.observe(el));
 
-    // === Темен/светол режим ===
     const btn = document.createElement("button");
     btn.textContent = "🌓";
     btn.style.position = "fixed";
@@ -47,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
         setTheme(mode);
     });
 
-    // === Back to top копче ===
     const topBtn = document.createElement("button");
     topBtn.textContent = "↑";
     Object.assign(topBtn.style, {
@@ -82,3 +77,4 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
